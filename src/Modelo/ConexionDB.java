@@ -14,7 +14,7 @@ public class ConexionDB {
     private static Statement stm;
 
     private final String user = "PARKINGISTA";
-    private final String clave = "1234";
+    private final String clave = "967721405";
     private final String url = "jdbc:oracle:thin:@localhost:1521:xe";
 
     public ConexionDB() {

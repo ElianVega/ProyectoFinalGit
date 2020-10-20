@@ -55,6 +55,7 @@ public class ControlCrud {
     public void ControlCrud() {
         placeHolderCampos();
         validarCampos();
+        crud.getBtn_atras().setVisible(false);
         filtroBuscar(crud.getTxt_sfiltro());
         setFilteField(crud.getJc_filtrar());
         eventCerrarJDialogs(crud.getjDUsuario());

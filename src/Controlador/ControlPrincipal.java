@@ -34,7 +34,9 @@ import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 import Modelo.ConexionDB;
 import java.awt.Dialog;
+import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JRootPane;
 import net.sf.jasperreports.engine.JRException;
@@ -330,10 +332,14 @@ public class ControlPrincipal {
         JasperReport masterReport;
         JasperPrint jp;
         JasperViewer jv;
+        Image imagen1 = new ImageIcon(getClass().getResource("/Vistas/Iconos/ISTA_LOGO.png")).getImage();
+        Image imagen2 = new ImageIcon(getClass().getResource("/Vistas/Iconos/ISTA_ICO.png")).getImage();
+        Map<String, Object> parametros = new HashMap<>();
         try {
             masterReport = (JasperReport) JRLoader.loadObject(getClass().getResource("/Vistas/Reports/" + Reporte + ".jasper"));
-
-            jp = JasperFillManager.fillReport(masterReport, null, ConexionDB.getConexion());
+            parametros.put("imagen1", imagen1);
+            parametros.put("imagen2", imagen2);
+            jp = JasperFillManager.fillReport(masterReport, parametros, ConexionDB.getConexion());
             jv = new JasperViewer(jp, false);
 //            jv.setVisible(true);
 

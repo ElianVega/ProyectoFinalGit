@@ -40,6 +40,7 @@ public class ControlCrudVehiculos {
 
     public void iniciarControl() {
         validarCampos();
+        crudVehiculo.getBtnAtrasV().setVisible(true);
         placeHolderCampos();
         eventCerrarJDialogs();
                 filtroBuscar(crudVehiculo.getTxt_filtovehiculo());
